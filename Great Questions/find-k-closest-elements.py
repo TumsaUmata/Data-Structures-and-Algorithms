@@ -21,3 +21,8 @@ class Solution2:
                 right = mid
         return arr[left:left + k]
 
+"""
+Time Complexity and Space Complexity:
+Solution 1: O(N) and O(1)
+Solution 2: O(LogN) and O(1)
+"""
