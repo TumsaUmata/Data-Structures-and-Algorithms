@@ -23,6 +23,10 @@ class Solution2:
 
 """
 Time Complexity and Space Complexity:
-Solution 1: O(N) and O(1)
-Solution 2: O(LogN) and O(1)
+Solution 1: O(N) and O(1) --- two pointers
+Solution 2: O(LogN) and O(1) --- binary search
+
+Other solutions:
+Naive Solution: We can sort all the array depending on their absolute value difference, then return k. 
+Better Solution: We can heap -- O(NlogK) TC and O(K) SC
 """
