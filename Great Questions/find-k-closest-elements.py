@@ -28,5 +28,6 @@ Solution 2: O(LogN) and O(1) --- binary search
 
 Other solutions:
 Naive Solution: We can sort all the array depending on their absolute value difference, then return k. 
+Time and Space complexity of the sorting algorithm used matters here.
 Better Solution: We can heap -- O(NlogK) TC and O(K) SC
 """
