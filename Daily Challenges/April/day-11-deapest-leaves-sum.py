@@ -26,3 +26,21 @@ class Solution:
             result = level_sum
 
         return result
+
+
+class Solution2:
+    def deepestLeavesSum(self, root: TreeNode) -> int:
+        sums = []
+        self.dfs(root, 0, sums)
+        return sums[-1]
+
+    def dfs(self, node, level, sums):
+        if level == len(sums):
+            sums.append(node.val)
+        else:
+            sums[level] += node.val
+
+        if node.left:
+            self.dfs(node.left, level + 1, sums)
+        if node.right:
+            self.dfs(node.right, level + 1, sums)
