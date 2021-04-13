@@ -28,3 +28,23 @@ class Solution2:
         if not root.left and not root.right and root.val == targetSum:
             return True
         return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val)
+
+
+class Solution3:
+    def hasPathSum(self, root: TreeNode, sum: int) -> bool:
+        if root:
+            stack = [(root, 0)]
+            while stack:
+                curr_node, path_sum = stack.pop()
+                path_sum += curr_node.val
+
+                if not curr_node.left and not curr_node.right:
+                    if path_sum == sum:
+                        return True
+                else:
+                    if curr_node.left:
+                        stack.append((curr_node.left, path_sum))
+                    if curr_node.right:
+                        stack.append((curr_node.right, path_sum))
+
+        return False
