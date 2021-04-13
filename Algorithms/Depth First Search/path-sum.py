@@ -31,7 +31,29 @@ class Solution2:
 
 
 class Solution3:
+    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
+        """Iteratively starting from targetSum and decreasing"""
+        if not root:
+            return False
+
+        stack = [(root, targetSum)]
+        while stack:
+            current_node, current_sum = stack.pop()
+
+            if not current_node.left and not current_node.right and current_node.val == current_sum:
+                return True
+            else:
+                if current_node.left:
+                    stack.append((current_node.left, current_sum - current_node.val))
+                if current_node.right:
+                    stack.append((current_node.right, current_sum - current_node.val))
+
+        return False
+
+
+class Solution4:
     def hasPathSum(self, root: TreeNode, sum: int) -> bool:
+        """Iteratively starting from targetSum and increasing"""
         if root:
             stack = [(root, 0)]
             while stack:
